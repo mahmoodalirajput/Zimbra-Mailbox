@@ -1,0 +1,35 @@
+If you want to delete emails from user mailbox via command line, Kindly follow below steps.
+
+Step1:
+  Switch user to Zimbra
+
+su - zimbra
+
+Step2:
+  zmmailbox -z -m mahmood.ali@xyz.com
+
+Note:It will show you mailbox detail and switch into mailbox of user like this.
+
+mailbox: mahmood.ali@xyz.com, size: 107.92 MB, messages: 2208, unread: 268
+authenticated as mahmood.ali@xyz.com
+mbox mahmood.ali@xyz.com>
+
+Step3:
+  write down only [gaf] command, it will show you All mailbox folders. Like below.
+  
+          Id  View      Unread   Msg Count  Path
+----------  ----  ----------  ----------  ----------
+         2  mess          46         511  /Inbox
+       403  mess           5         182  /Inbox/DevOPS_Tickets
+       304  mess          24         197  /Inbox/General
+       400  mess          38         346  /Inbox/NOC_Tickets
+       367  mess           0           0  /Inbox/PRTG_Network_Alerts
+       395  mess          66          84  /Inbox/Uptime_Alerts
+         5  mess           6         221  /Sent
+         3  unkn           1           3  /Trash
+        
+        
+Step4:
+  if you want to delete emails from any specific folder, write down [ef] command. Like below.
+  
+  example:  ef /Inbox/NOC_Tickets   [it will delete emails only from NOC_Tickets]
